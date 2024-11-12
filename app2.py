@@ -68,7 +68,8 @@ if st.button("Start Call"):
     with st.spinner("Starting call..."):
         # API request payload
         prompt = prompt_dic[selected_prompt]
-        response = start_bot(prompt)
+        voice_id=prompt_dic[selected_voice_id]
+        response = start_bot(prompt,voice_id)
         room_url = response['room_url']
         
         st.success("Call setup complete!")
