@@ -8,7 +8,7 @@ headers = {
 
 
 
-def start_bot(prompt:str):
+def start_bot(prompt:str, voice_id:str):
     data = {
         "speed": "normal",
         "emotion": [
@@ -16,7 +16,7 @@ def start_bot(prompt:str):
             "curiosity"
         ],
         "prompt": prompt,
-        "voice_id": "a0e99841-438c-4a64-b679-ae501e7d6091",
+        "voice_id": voice_id,
         "session_time": 3600
     }
 
