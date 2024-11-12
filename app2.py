@@ -28,6 +28,22 @@ voice_map = {
 "The Merchant" : "50d6beb4-80ea-4802-8387-6c948fe84208"
 }
 
+voice_map_el= {
+    "Aria": "9BWtsMINqrJLrRacOk9x",
+    "Roger": "CwhRBWXzGAHq8TQ4Fs17",
+    "Sarah": "EXAVITQu4vr4xnSDxMaL",
+    "Laura": "FGY2WhTYpPnrIDTdsKH5",
+    "Charlie": "IKne3meq5aSn9XLyUdCD",
+    "George": "JBFqnCBsd6RMkjVDRZzb",
+    "Callum": "N2lVS1w4EtoT3dr4eOWO",
+    "River": "SAz9YHcvj6GT2YYXdXww",
+    "Liam": "TX3LPaxmHKxFdv7VOQHJ",
+    "Charlotte": "XB0fDUnXU5powFXDhCwa",
+    "Alice": "Xb7hH8MSUJpSbSDYk0k2",
+    "Matilda": "XrExE9yKIg1WjnnlVkGX",
+    "Will": "bIHbv24MWmeRgasZH58o"
+}
+
 prompt_dic = {
     "Specssaver broken glasses" :"""You are a customer named John, a 28-year-old who recently bought BARBOUR 11 glasses from Specsavers. Three months after purchasing, you accidentally damaged the frames while on holiday. You’re calling Specsavers Customer Service to discuss the situation and check if the damage is covered under their 100-day no-quibble, no-fuss guarantee.\nIn this conversation:\n- Only speak as John, the customer.\n- Engage naturally, asking questions like ‘Is this covered under the guarantee?’, ‘What will it cost if it isn’t?’, and ‘How long would a repair take?’. \n- Avoid providing answers on behalf of the agent. Wait for the agent’s response before continuing with your next question or statement.\n- Show your frustration when the agent says the guarantee doesn’t cover accidental damage, and try to negotiate a fair resolution.\n- When the agent says ‘SHABANG,’ stop the roleplay and provide feedback on their service.\n\nSpeak casually, as if in a real call. Remember, you’re here to help the agent practice handling customer concerns.""",
     "Specssaver headache":"""You are Julia, a 32-year-old mother of two, visiting the store for a second time. It has been 3 weeks since you bought distance vision glasses, but you’ve only worn them five times because they don’t seem to be working for you. You are experiencing headaches, discomfort behind your ears, and the glasses keep slipping off your face while you’re working.\nIn this interaction:\n- Only speak as Julia, the customer.\n- Answer only when asked specific questions by the customer service agent.\n- Start by asking for a refund, explaining that you’re frustrated and can no longer justify the cost.\n- If the agent offers a solution, you’ll only agree to keep the glasses if it seems fair.\n\nWhen the agent says ‘SHABANG,’ stop the roleplay and give feedback on their service.\n\nSpeak casually, as if in a real face-to-face conversation. Remember, you’re here to help the customer service agent practice handling customer concerns.""",
@@ -57,7 +73,7 @@ st.markdown("<h1 style='text-align: center;'>EasyCloser</h1>", unsafe_allow_html
 selected_prompt = st.selectbox("Select Scenario", list(prompt_dic.keys()))
 
 # Voice ID selection
-selected_voice_id = st.selectbox("Select Avatar", list(voice_map.keys()))
+selected_voice_id = st.selectbox("Select Avatar", list(voice_map_el.keys()))
 
 # Additional customization options
 emotion = st.selectbox("Select Emotion", ["Neutral", "Happy", "Frustrated", "Curious"])
@@ -68,7 +84,7 @@ if st.button("Start Call"):
     with st.spinner("Starting call..."):
         # API request payload
         prompt = prompt_dic[selected_prompt]
-        voice_id=voice_map[selected_voice_id]
+        voice_id=voice_map_el[selected_voice_id]
         response = start_bot(prompt,voice_id)
         room_url = response['room_url']
         
