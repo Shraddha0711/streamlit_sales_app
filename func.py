@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://pipecat-default-example-wispy-cloud-99.fly.dev/'
+url = 'https://pipecat-bot-28112024.fly.dev/'
 headers = {
     'accept': 'application/json',
     'Content-Type': 'application/json'
@@ -10,14 +10,9 @@ headers = {
 
 def start_bot(prompt:str, voice_id:str):
     data = {
-        "speed": "normal",
-        "emotion": [
-            "positivity:high",
-            "curiosity"
-        ],
         "prompt": prompt,
         "voice_id": voice_id,
-        "session_time": 3600
+        "session_time": 10
     }
 
     response = requests.post(url, headers=headers, json=data)
