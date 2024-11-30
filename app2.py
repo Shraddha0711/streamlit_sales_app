@@ -84,7 +84,7 @@ if st.button("Start Call"):
     with st.spinner("Starting call..."):
         # API request payload
         prompt = prompt_dic[selected_prompt]
-        voice_id=voice_map_el[selected_voice_id]
+        voice_id=voice_map[selected_voice_id]
         response = start_bot(prompt,voice_id)
         room_url = response['room_url']
         
