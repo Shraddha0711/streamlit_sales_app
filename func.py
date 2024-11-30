@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://pipecat-bot-28112024.fly.dev/'
+url = 'https://basic-sales-ai.fly.dev/'
 headers = {
     'accept': 'application/json',
     'Content-Type': 'application/json'
