@@ -73,7 +73,7 @@ st.markdown("<h1 style='text-align: center;'>EasyCloser</h1>", unsafe_allow_html
 selected_prompt = st.selectbox("Select Scenario", list(prompt_dic.keys()))
 
 # Voice ID selection
-selected_voice_id = st.selectbox("Select Avatar", list(voice_map.keys()))
+selected_voice_id = st.selectbox("Select Avatar", list(voice_map_el.keys()))
 
 # Additional customization options
 emotion = st.selectbox("Select Emotion", ["Neutral", "Happy", "Frustrated", "Curious"])
@@ -84,7 +84,7 @@ if st.button("Start Call"):
     with st.spinner("Starting call..."):
         # API request payload
         prompt = prompt_dic[selected_prompt]
-        voice_id=voice_map[selected_voice_id]
+        voice_id=voice_map_el[selected_voice_id]
         response = start_bot(prompt,voice_id)
         room_url = response['room_url']
         
