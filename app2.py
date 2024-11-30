@@ -3,7 +3,7 @@ import requests
 from func import start_bot
 
 # API endpoint
-api_endpoint = "https://pipecat-default-example-wispy-cloud-99.fly.dev/"
+api_endpoint = "https://basic-sales-ai.fly.dev"
 
 
 # Mapping of prompt and voice_id
