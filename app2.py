@@ -73,7 +73,7 @@ st.markdown("<h1 style='text-align: center;'>EasyCloser</h1>", unsafe_allow_html
 selected_prompt = st.selectbox("Select Scenario", list(prompt_dic.keys()))
 
 # Voice ID selection
-selected_voice_id = st.selectbox("Select Avatar", list(voice_map_el.keys()))
+selected_voice_id = st.selectbox("Select Avatar", list(voice_map.keys()))
 
 # Additional customization options
 emotion = st.selectbox("Select Emotion", ["Neutral", "Happy", "Frustrated", "Curious"])
