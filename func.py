@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://basic-sales-ai.fly.dev/'
+url = 'https://sales-transcript-feedback.fly.dev/'
 headers = {
     'accept': 'application/json',
     'Content-Type': 'application/json'
