@@ -87,6 +87,7 @@ if st.button("Start Call"):
         voice_id=voice_map_el[selected_voice_id]
         response = start_bot(prompt,voice_id)
         room_url = response['room_url']
+        room_id=response['room_id']
         
         st.success("Call setup complete!")
         
@@ -98,3 +99,9 @@ if st.button("Start Call"):
                 </button>
             </a>
         """, unsafe_allow_html=True)
+
+
+        Path = f'''{room_id}'''
+        st.write("Room Id")
+        st.code(Path, language="python")
+        
